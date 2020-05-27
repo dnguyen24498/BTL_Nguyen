@@ -1,0 +1,47 @@
+@model IEnumerable<Product>
+<div class="product-sec1 row">
+    <div class="row">
+        <h1 class="text-center">Sản phẩm giảm giá</h1>
+    </div>
+    @foreach (var p in Model)
+    {
+        <div class="col-md-4 product-men">
+            <div class="men-pro-item simpleCart_shelfItem">
+                <div class="men-thumb-item">
+                    <img src="@p.ImagePath" alt="">
+                    <div class="men-cart-pro">
+                        <div class="inner-men-cart-pro">
+                            <a href="single.html" class="link-product-add-cart">Xem nhanh</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="item-info-product ">
+                    <h4>
+                        <a href="single.html">@p.Name, @p.Weight</a>g
+                    </h4>
+                    <div class="info-product-price">
+                        <span class="item_price">@p.Price.ToString("C")</span>
+                        <del>@p.OriginalPrice.ToString("C")</del>
+                    </div>
+                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+                        <form action="#" method="post">
+                            <fieldset>
+                                <input type="hidden" name="cmd" value="_cart"/>
+                                <input type="hidden" name="add" value="1"/>
+                                <input type="hidden" name="business" value=" "/>
+                                <input type="hidden" name="item_name" value="YiPPee Noodles, 65g"/>
+                                <input type="hidden" name="amount" value="15.00"/>
+                                <input type="hidden" name="discount_amount" value="1.00"/>
+                                <input type="hidden" name="currency_code" value="USD"/>
+                                <input type="hidden" name="return" value=" "/>
+                                <input type="hidden" name="cancel_return" value=" "/>
+                                <input type="submit" name="submit" value="Thêm vào giỏ hàng" class="button"/>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
